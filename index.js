@@ -44,7 +44,7 @@ function showBook(book) {
         bookEl.innerHTML += `<h4>${user.username}</h4>`
     })
 
-    bookEl.innerHTML += `<button type="button">${checkUserSubscribed(book) ? 'Un-read Book' : 'Read Book'}</button>`
+    bookEl.innerHTML += `<button type="button">${checkUserSubscribed(book) ? 'Un-read Book 👎' : 'Read Book 👍'}</button>`
     const btnEl = bookEl.querySelector('button')
     btnEl.addEventListener('click', () => {
         subscribe(book)
@@ -66,7 +66,9 @@ function subscribe(book) {
     const url = (BOOKS_URL + `/${book.id}`)
     const options = {
         method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
+        headers:  {
+            'Content-Type': 'application/json'
+        },
         body: JSON.stringify(book)
     }
     return fetch(url, options)
