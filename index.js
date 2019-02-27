@@ -6,7 +6,6 @@ const USER = { "id": 1, "username": "pouros" }
 
 document.addEventListener("DOMContentLoaded", function() {
     displayBookList()
-
 });
 
 function fetchBooks() {
