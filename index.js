@@ -1,6 +1,6 @@
 
 const BOOKS_URL = "http://localhost:3000/books"
-const bookListEl = document.querySelector('#list-panel')
+const bookListEl = document.querySelector('#list')
 const bookShowEl = document.querySelector('#show-panel')
 const USER = { "id": 1, "username": "pouros" }
 
