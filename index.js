@@ -39,6 +39,7 @@ function showBook(book) {
         <h2>${book.title}</h2>
         <img src="${book.img_url}">
         <p>${book.description}</p>
+        <h4>USERS:</h4>
         `
     book.users.forEach(user => {
         bookEl.innerHTML += `<h4>${user.username}</h4>`
@@ -57,9 +58,11 @@ function showBook(book) {
 
 function subscribe(book) {
     if (!checkUserSubscribed(book)) {
-    book.users.push(USER)
+        book.users.push(USER)
     } else {
-        book.users.pop()
+        book.users = book.users.filter(function(value){
+            return value.id != USER.id
+        })
     }
     const url = (BOOKS_URL + `/${book.id}`)
     const options = {
